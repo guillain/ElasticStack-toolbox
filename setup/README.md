@@ -15,7 +15,7 @@ Search Guard will increase the security and add AUTH and TLS methode.
 At this moment only the montioring is not fully secured as HTTP  only is allowed on this module (re-only ^^).
 
 ## Design 
-Best Practice for _real usage_
+Target is to apply the best Practice for a _real usage_.
 
 Repartition by Virtual Machine/Docker
 0/ Source
@@ -34,9 +34,12 @@ Repartition by Virtual Machine/Docker
 * _Install:_ kibana
 * _What:_ Provide web interface for analytics & ML reports
 
-Nodes design and sizing are not seeing here.
+
 Specific study must be done on your targeted environment to establish the nodes repartition and them sizing according to the role that they will have.
 Example if you need to provide high search performance it can be interesting to separate the node in charge of and increase its resources...
+For that two examples are provided:
+* [elasticsearch/elasticsearch.yml](elasticsearch/elasticsearch.yml): one ES node, simple & easy for demo
+* [elasticsearch/example-hot_warm](elasticsearch/example-hot_warm): set of ES files to init 8 nodes (2*master,3*hot,3*warm)
 
 ## Versions
 This package is an old update coming from the 2.4 versions and today run on 6.4 cluster.
@@ -166,12 +169,6 @@ At this time validated only for the Cisco CUCM (Call Manager) for these version:
 * 8
 * 10
 
-### ToDo list
-* Install logstash-filter-translate in Logstash
-* Import JSON in elasticsearch and kibana (to find in the Damien's site)
-* Finalize the TMS CDR integration
-* Provide the file manager scripts
-
 ## GeoIP
 Thanks to:[manicas](https://www.digitalocean.com/community/users/manicas) and its [article](https://www.digitalocean.com/community/tutorials/how-to-map-user-location-with-geoip-and-elk-elasticsearch-logstash-and-kibana)
 
@@ -209,5 +206,16 @@ Principle:
 * logstash
 * elasticsearch
 * redis
+
+## ToDo list
+* Install logstash-filter-translate in Logstash
+* Import JSON in elasticsearch and kibana (to find in the Damien's site)
+* Finalize the TMS/CMS CDR/CMR integration
+* Provide the file manager scripts (backup.sh/clean.sh)
+
+## Deep dive
+Thanks to these useful articles to go deeper in the design and the index knowledge.
+* https://medium.com/@abhidrona/elasticsearch-deployment-best-practices-d6c1323b25d7
+* https://thoughts.t37.net/designing-the-perfect-elasticsearch-cluster-the-almost-definitive-guide-e614eabc1a87
 
 ## Have fun :)
