@@ -1,0 +1,55 @@
+# ======================== Elasticsearch Configuration =========================
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+# ---------------------------------- Cluster -----------------------------------
+cluster.name: MyELK
+# ------------------------------------ Node ------------------------------------
+#node.name: node-1
+#node.attr.rack: r1
+# ----------------------------------- Paths ------------------------------------
+path.data: /var/lib/elasticsearch
+path.logs: /var/log/elasticsearch
+# ----------------------------------- Memory -----------------------------------
+bootstrap.memory_lock: true
+# ---------------------------------- Network -----------------------------------
+network.host: 0.0.0.0
+http.port: 9200
+# --------------------------------- Discovery ----------------------------------
+# The default list of hosts is ["127.0.0.1", "[::1]"]
+#discovery.zen.ping.unicast.hosts: ["host1", "host2"]
+#discovery.zen.minimum_master_nodes:
+# ---------------------------------- Gateway -----------------------------------
+#gateway.recover_after_nodes: 3
+# ---------------------------------- Various -----------------------------------
+#action.destructive_requires_name: true
+
+xpack.security.enabled: false
+xpack.ml.enabled: false
+xpack.monitoring.enabled: false
+xpack.security.audit.enabled: false
+thread_pool.search.queue_size : 5000
+
+searchguard.enterprise_modules_enabled: false
+
+######## Start Search Guard Demo Configuration ########
+# WARNING: revise all the lines below before you go into production
+searchguard.ssl.transport.pemcert_filepath: esnode.pem
+searchguard.ssl.transport.pemkey_filepath: esnode-key.pem
+searchguard.ssl.transport.pemtrustedcas_filepath: root-ca.pem
+searchguard.ssl.transport.enforce_hostname_verification: false
+searchguard.ssl.http.enabled: true
+searchguard.ssl.http.pemcert_filepath: esnode.pem
+searchguard.ssl.http.pemkey_filepath: esnode-key.pem
+searchguard.ssl.http.pemtrustedcas_filepath: root-ca.pem
+searchguard.allow_unsafe_democertificates: true
+searchguard.allow_default_init_sgindex: true
+searchguard.authcz.admin_dn:
+  - CN=kirk,OU=client,O=client,L=test, C=de
+
+searchguard.audit.type: internal_elasticsearch
+searchguard.enable_snapshot_restore_privilege: true
+searchguard.check_snapshot_restore_write_privileges: true
+searchguard.restapi.roles_enabled: ["sg_all_access"]
+cluster.routing.allocation.disk.threshold_enabled: false
+discovery.zen.minimum_master_nodes: 1
+node.max_local_storage_nodes: 3
+######## End Search Guard Demo Configuration ########

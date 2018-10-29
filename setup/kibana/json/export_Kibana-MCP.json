@@ -1,0 +1,870 @@
+[
+  {
+    "_id": "CUCM-CMR-Troubleshooting",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM CMR - Troubleshooting",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"CUCM-CMR-Average-latency-per-devices\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":4,\"col\":1,\"row\":1},{\"id\":\"CUCM-CMR-Average-latency-per-directory-number\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":5,\"col\":1,\"row\":5},{\"id\":\"CUCM-CMR-Packet-lost-per-devices\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":4,\"col\":7,\"row\":1},{\"id\":\"CUCM-CMR-Packet-Lost-per-directory-number\",\"type\":\"visualization\",\"size_x\":6,\"size_y\":5,\"col\":7,\"row\":5}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-WAN-Calls",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM - WAN Calls",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"CUCM-CDR-OUTBOUND-PSTN-per-PRI\",\"row\":3,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":4,\"id\":\"CUCM-CDR-INBOUND-PSTN-per-PRI\",\"row\":3,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":1,\"id\":\"CUCM-CDR-Total-OUTBOUND-PSTN-CALLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CUCM-CDR-Gatekeeper-Calls\",\"row\":3,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":10,\"id\":\"CUCM-CDR-CCX-HQ-Calls\",\"row\":3,\"size_x\":3,\"size_y\":4,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CUCM-CDR-Total-Gatekeeper-Calls\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":4,\"id\":\"CUCM-CDR-Total-INBOUND-PSTN-CALLS\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":10,\"id\":\"CUCM-CDR-Total-CCX-HQ-Calls\",\"row\":1,\"size_x\":3,\"size_y\":2,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"callingPartyNumber\",\"originalCalledPartyNumber\",\"finalCalledPartyNumber\",\"duration\",\"origDeviceName\",\"destDeviceName\"],\"id\":\"CUCM-All-Call\",\"row\":7,\"size_x\":12,\"size_y\":7,\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-15m",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Troubleshooting-Voice-Quality",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM CMR - Troubleshooting Voice Quality",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"id\":\"CUCM-CMR-Voice-Quality-MOS-lower-than-4\",\"type\":\"visualization\",\"size_x\":4,\"size_y\":3,\"col\":1,\"row\":1},{\"id\":\"CUCM-CMR-Voice-Quality-Severely-Conceal-Secs-more-than-1\",\"type\":\"visualization\",\"size_x\":4,\"size_y\":3,\"col\":1,\"row\":4},{\"id\":\"CUCM-CMR-Voice-Quality-All-Records\",\"type\":\"search\",\"size_x\":8,\"size_y\":13,\"col\":1,\"row\":7,\"columns\":[\"deviceName\",\"directoryNum\",\"cucm_clustername\",\"VQMetrics_CCR\",\"VQMetrics_CS\",\"VQMetrics_ICR\",\"VQMetrics_ICRmx\",\"VQMetrics_MLQK\",\"VQMetrics_MLQKav\",\"VQMetrics_MLQKmn\",\"VQMetrics_MLQKmx\",\"VQMetrics_MLQKvr\",\"VQMetrics_SCS\"],\"sort\":[\"@timestamp\",\"desc\"]},{\"id\":\"CUCM-CMR-Voice-Quality-Average-MOS\",\"type\":\"visualization\",\"size_x\":4,\"size_y\":3,\"col\":5,\"row\":4},{\"id\":\"CUCM-CDR-Top-5-Codec-used\",\"type\":\"visualization\",\"size_x\":4,\"size_y\":3,\"col\":5,\"row\":1}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-Dashboard-7-days",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM - Top 20 Dashboard - 7 days",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"col\":1,\"id\":\"CUCM-Call-per-seconds\",\"row\":4,\"size_x\":12,\"size_y\":2,\"type\":\"visualization\"},{\"col\":7,\"id\":\"CUCM-Top-20-duration-per-called-number\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":4,\"id\":\"CUCM-Top-20-duration-per-calling-number\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":10,\"id\":\"CUCM-Top-20-duration-per-destination-device\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"id\":\"CUCM-Top-20-duration-per-calling-device\",\"row\":1,\"size_x\":3,\"size_y\":3,\"type\":\"visualization\"},{\"col\":1,\"columns\":[\"callingPartyNumber\",\"originalCalledPartyNumber\",\"finalCalledPartyNumber\",\"duration\",\"origDeviceName\",\"destDeviceName\"],\"id\":\"CUCM-All-Call\",\"row\":6,\"size_x\":12,\"size_y\":19,\"sort\":[\"duration\",\"desc\"],\"type\":\"search\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-7d",
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-Dashboard",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM - Top 20 Dashboard",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":3,\"i\":\"1\",\"w\":3,\"x\":9,\"y\":0},\"id\":\"CUCM-Top-20-duration-per-called-number\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"2\",\"w\":3,\"x\":3,\"y\":0},\"id\":\"CUCM-Top-20-duration-per-calling-number\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"3\",\"w\":3,\"x\":6,\"y\":0},\"id\":\"CUCM-Top-20-duration-per-destination-device\",\"panelIndex\":\"3\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"4\",\"w\":3,\"x\":0,\"y\":0},\"id\":\"CUCM-Top-20-duration-per-calling-device\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"columns\":[\"callingPartyNumber\",\"originalCalledPartyNumber\",\"finalCalledPartyNumber\",\"duration\",\"origDeviceName\",\"destDeviceName\"],\"gridData\":{\"h\":4,\"i\":\"5\",\"w\":12,\"x\":0,\"y\":6},\"id\":\"CUCM-All-Call\",\"panelIndex\":\"5\",\"sort\":[\"@timestamp\",\"desc\"],\"type\":\"search\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"6\",\"w\":3,\"x\":9,\"y\":3},\"id\":\"CUCM-CDR-Call-per-minutes\",\"panelIndex\":\"6\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"7\",\"w\":4,\"x\":0,\"y\":3},\"id\":\"CUCM-CDR-Top-20-Call-per-Calling-Number\",\"panelIndex\":\"7\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"8\",\"w\":3,\"x\":6,\"y\":3},\"id\":\"CUCM-CDR-Zero-Duration-Calls\",\"panelIndex\":\"8\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":3,\"i\":\"9\",\"w\":2,\"x\":4,\"y\":3},\"id\":\"CUCM-CDR-Total-Call\",\"panelIndex\":\"9\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-5y",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"*\",\"query\":\"*\"}}},\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Reception-HQ",
+    "_type": "dashboard",
+    "_source": {
+      "title": "CUCM - Reception SD",
+      "hits": 0,
+      "description": "",
+      "panelsJSON": "[{\"gridData\":{\"h\":4,\"i\":\"1\",\"w\":4,\"x\":0,\"y\":2},\"id\":\"CUCM-CDR-Reception-HQ-INBOUND-Calls\",\"panelIndex\":\"1\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"2\",\"w\":3,\"x\":0,\"y\":0},\"id\":\"CUCM-CDR-Reception-HQ-Total-Calls\",\"panelIndex\":\"2\",\"type\":\"visualization\",\"version\":\"6.2.4\"},{\"columns\":[\"callingPartyNumber\",\"originalCalledPartyNumber\",\"finalCalledPartyNumber\",\"duration\"],\"gridData\":{\"h\":6,\"i\":\"3\",\"w\":8,\"x\":4,\"y\":2},\"id\":\"CUCM-CDR-Reception-HQ-Total-Calls\",\"panelIndex\":\"3\",\"sort\":[\"duration\",\"desc\"],\"type\":\"search\",\"version\":\"6.2.4\"},{\"gridData\":{\"h\":2,\"i\":\"4\",\"w\":9,\"x\":3,\"y\":0},\"id\":\"CUCM-CDR-Reception-HQ-Calls-slash-min\",\"panelIndex\":\"4\",\"type\":\"visualization\",\"version\":\"6.2.4\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"hidePanelTitles\":false,\"useMargins\":true}",
+      "version": 1,
+      "timeRestore": true,
+      "timeTo": "now",
+      "timeFrom": "now-5y",
+      "refreshInterval": {
+        "display": "Off",
+        "pause": false,
+        "value": 0
+      },
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"query\":{\"language\":\"lucene\",\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"default_field\":\"*\",\"query\":\"*\"}}},\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "45ec7d20-6ee6-11e8-b22b-4f4cbd9f2770",
+    "_type": "dashboard",
+    "_source": {
+      "title": "Bot - usage",
+      "hits": 0,
+      "description": "Usage of the bots",
+      "panelsJSON": "[{\"panelIndex\":\"1\",\"gridData\":{\"x\":0,\"y\":0,\"w\":6,\"h\":3,\"i\":\"1\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"fad22360-6ee2-11e8-b22b-4f4cbd9f2770\"},{\"panelIndex\":\"2\",\"gridData\":{\"x\":0,\"y\":3,\"w\":12,\"h\":3,\"i\":\"2\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"ec8b64f0-6ee3-11e8-b22b-4f4cbd9f2770\"},{\"panelIndex\":\"3\",\"gridData\":{\"x\":6,\"y\":0,\"w\":6,\"h\":3,\"i\":\"3\"},\"version\":\"6.2.4\",\"type\":\"visualization\",\"id\":\"0e0d7810-6ee5-11e8-b22b-4f4cbd9f2770\"}]",
+      "optionsJSON": "{\"darkTheme\":false,\"useMargins\":true,\"hidePanelTitles\":false}",
+      "version": 1,
+      "timeRestore": false,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-All-Call",
+    "_type": "search",
+    "_source": {
+      "title": "CUCM CDR - All Call",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "callingPartyNumber",
+        "originalCalledPartyNumber",
+        "finalCalledPartyNumber",
+        "duration",
+        "origDeviceName",
+        "destDeviceName"
+      ],
+      "sort": [
+        "duration",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Voice-Quality-All-Records",
+    "_type": "search",
+    "_source": {
+      "title": "CUCM CMR - Voice Quality All Records",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "deviceName",
+        "directoryNum",
+        "cucm_clustername",
+        "VQMetrics_CCR",
+        "VQMetrics_CS",
+        "VQMetrics_ICR",
+        "VQMetrics_ICRmx",
+        "VQMetrics_MLQK",
+        "VQMetrics_MLQKav",
+        "VQMetrics_MLQKmn",
+        "VQMetrics_MLQKmx",
+        "VQMetrics_MLQKvr",
+        "VQMetrics_SCS"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"query\":{\"query\":{\"query_string\":{\"query\":\"VQMetrics_MLQKav: [0 TO *]\",\"analyze_wildcard\":true}},\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Reception-Outbound-Calls",
+    "_type": "search",
+    "_source": {
+      "title": "CUCM Reception Outbound Calls",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "dateTimeConnect_formatted",
+        "callingPartyNumber",
+        "duration",
+        "originalCalledPartyNumber",
+        "finalCalledPartyNumber",
+        "lastRedirectRedirectReason",
+        "lastRedirectDn"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":\"callingPartyNumber:8666 OR callingPartyNumber:8666\",\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Reception-HQ-Total-Calls",
+    "_type": "search",
+    "_source": {
+      "title": "CUCM CDR - Reception SD - Total Calls",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "callingPartyNumber",
+        "originalCalledPartyNumber",
+        "finalCalledPartyNumber",
+        "duration"
+      ],
+      "sort": [
+        "duration",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":\"originalCalledPartyNumber:8666 OR originalCalledPartyNumber:8666\",\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647},\"filter\":[],\"highlightAll\":true,\"version\":true}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Total-OUTBOUND-PSTN-CALLS",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Total OUTBOUND PSTN CALLS",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGC2SE-01.IT.ACTELION.COM\\\" OR destDeviceName:\\\"S0/SU0/DS1-1@CH-CUVGC2SE-01.IT.ACTELION.COM\\\" OR destDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGB1SE-01.IT.ACTELION.COM\\\" OR destDeviceName:\\\"S0/SU0/DS1-1@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Total-Gatekeeper-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Total Gatekeeper Calls",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: \\\"CH_GK_Trunk\\\" OR origDeviceName: \\\"CH_GK_Trunk\\\"\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Call-per-seconds",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Call per seconds",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":false,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":true,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Top-5-Codec-used",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 5 Codec used",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"destMediaCap_payloadCapability_text\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"origDeviceName\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Total-Call",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Total Call",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":\"40\"},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"duration>\\\"1\\\"\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Total-INBOUND-PSTN-CALLS",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Total INBOUND PSTN CALLS",
+      "visState": "{\"type\":\"metric\",\"params\":{\"fontSize\":60},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGC2SE-01.IT.ACTELION.COM\\\" OR origDeviceName:\\\"S0/SU0/DS1-1@CH-CUVGC2SE-01.IT.ACTELION.COM\\\" OR origDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGB1SE-01.IT.ACTELION.COM\\\" OR origDeviceName:\\\"S0/SU0/DS1-1@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Packet-Lost-per-directory-number",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Packet Lost per directory number",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"numberPacketsLost\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"directoryNum\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Gatekeeper-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Gatekeeper Calls",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: CH_GK_Trunk\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: CH_GK_Trunk\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{},\"title\":\"CUCM CDR - Gatekeeper Calls\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "CUCM-All-Call",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-OUTBOUND-PSTN-per-PRI",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - OUTBOUND PSTN per PRI",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGC2SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName:\\\"S0/SU0/DS1-1@CH-CUVGC2SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: \\\"S0/SU0/DS1-1@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{},\"title\":\"CUCM CDR - OUTBOUND PSTN per PRI\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "CUCM-All-Call",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-CCX-HQ-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - CCX HQ Calls",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: SIPT_CCX_CUCM_SUB\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"destDeviceName: SIPT_CCX_CUCM_PUB\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: SIPT_CCX_CUCM_SUB\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: SIPT_CCX_CUCM_PUB\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{},\"title\":\"CUCM CDR - CCX HQ Calls\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "CUCM-All-Call",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Call-per-seconds",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Call per seconds",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":true,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Call-per-minutes",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Call per minutes",
+      "visState": "{\"type\":\"area\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"smoothLines\":true,\"scale\":\"linear\",\"interpolate\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"m\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Total-CCX-HQ-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Total CCX HQ Calls",
+      "visState": "{\"aggs\":[{\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"}],\"listeners\":{},\"params\":{\"fontSize\":60},\"type\":\"metric\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"destDeviceName: \\\"SIPT_CCX_CUCM_SUB\\\" OR destDeviceName: \\\"SIPT_CCX_CUCM_PUB\\\" OR origDeviceName: \\\"SIPT_CCX_CUCM_SUB\\\" OR origDeviceName: \\\"SIPT_CCX_CUCM_PUB\\\"\"}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Voice-Quality-Severely-Conceal-Secs-more-than-1",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Voice Quality Severely Conceal Secs more than 1",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"VQMetrics_SCS\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"directoryNum\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"VQMetrics_SCS:>=1\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-INBOUND-PSTN-per-PRI",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - INBOUND PSTN per PRI",
+      "visState": "{\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"isDonut\":false},\"aggs\":[{\"id\":\"1\",\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"type\":\"filters\",\"schema\":\"segment\",\"params\":{\"filters\":[{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGC2SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: \\\"S0/SU0/DS1-1@CH-CUVGC2SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: \\\"S0/SU0/DS1-0@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}},{\"input\":{\"query\":{\"query_string\":{\"query\":\"origDeviceName: \\\"S0/SU0/DS1-1@CH-CUVGB1SE-01.IT.ACTELION.COM\\\"\",\"analyze_wildcard\":true}}}}]}}],\"listeners\":{},\"title\":\"CUCM CDR - INBOUND PSTN per PRI\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "savedSearchId": "CUCM-All-Call",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Voice-Quality-Average-MOS",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Voice Quality Average MOS",
+      "visState": "{\"title\":\"CUCM CMR - Voice Quality Average MOS\",\"type\":\"line\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"showCircles\":false,\"smoothLines\":true,\"interpolate\":\"linear\",\"scale\":\"linear\",\"drawLinesBetweenPoints\":true,\"radiusRatio\":9,\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":true,\"yAxis\":{\"max\":5,\"min\":0},\"type\":\"line\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":true,\"defaultYExtents\":false,\"min\":0,\"max\":5},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Average offset\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"line\",\"mode\":\"normal\",\"data\":{\"label\":\"Average offset\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":false,\"interpolate\":\"cardinal\",\"radiusRatio\":9}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"offset\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"s\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"VQMetrics_MLQKav:>1\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "d5d2bbb0-6e65-11e8-b22b-4f4cbd9f2770",
+    "_type": "visualization",
+    "_source": {
+      "title": "Shellbot - Nbr of bot evt by bot name",
+      "visState": "{\"title\":\"Shellbot - Nbr of bot evt by bot name\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"bot.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\",\"customLabel\":\"Bot name\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{},\"customLabel\":\"\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"88d26e70-6e63-11e8-b22b-4f4cbd9f2770\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Packet-lost-per-devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Packet lost per devices",
+      "visState": "{\"title\":\"CUCM CMR - Packet lost per devices\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{},\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":false,\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Unique count of deviceName.keyword\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Unique count of deviceName.keyword\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\"}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"deviceName.keyword\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"numberPacketsLost.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\",\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Zero-Duration-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Zero Duration Calls",
+      "visState": "{\"title\":\"CUCM CDR - Zero Duration Calls\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"duration\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"callingPartyNumber.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"duration:<1\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Top-calling-cumber-call",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top calling cumber call",
+      "visState": "{\"title\":\"CUCM CDR - Top calling cumber call\",\"type\":\"table\",\"params\":{\"perPage\":10,\"showPartialRows\":false,\"showMeticsAtAllLevels\":false,\"sort\":{\"columnIndex\":null,\"direction\":null},\"showTotal\":false,\"totalFunc\":\"sum\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"bucket\",\"params\":{\"field\":\"duration\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"params\":{\"sort\":{\"columnIndex\":null,\"direction\":null}}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"callingPartyNumber: 92*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Voice-Quality-MOS-lower-than-4",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Voice Quality MOS lower than 4",
+      "visState": "{\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{}},\"aggs\":[{\"id\":\"1\",\"type\":\"avg\",\"schema\":\"metric\",\"params\":{\"field\":\"VQMetrics_MLQKav\"}},{\"id\":\"2\",\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"directoryNum\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}],\"listeners\":{}}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"VQMetrics_MLQKav:<4.0\",\"analyze_wildcard\":true}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Average-latency-per-directory-number",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Average latency per directory number",
+      "visState": "{\"title\":\"CUCM CMR - Average latency per directory number\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{},\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":false,\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\"}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"directoryNum.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\",\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CMR-Average-latency-per-devices",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CMR - Average latency per devices",
+      "visState": "{\"title\":\"CUCM CMR - Average latency per devices\",\"type\":\"histogram\",\"params\":{\"addLegend\":true,\"addTimeMarker\":false,\"addTooltip\":true,\"defaultYExtents\":false,\"mode\":\"stacked\",\"scale\":\"linear\",\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"yAxis\":{},\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100,\"rotate\":0},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":false,\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\"}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"latency.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"af1b4680-6e66-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"analyze_wildcard\":true,\"query\":\"*\",\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-duration-per-destination-device",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 20 duration per destination device",
+      "visState": "{\"title\":\"CUCM CDR - Top 20 duration per destination device\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"destDeviceName.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-duration-per-calling-device",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 20 duration per originating device",
+      "visState": "{\"title\":\"CUCM CDR - Top 20 duration per originating device\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"origDeviceName.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-duration-per-called-number",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 20 duration per called number",
+      "visState": "{\"title\":\"CUCM CDR - Top 20 duration per called number\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"originalCalledPartyNumber.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-Top-20-duration-per-calling-number",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 20 duration per calling number",
+      "visState": "{\"title\":\"CUCM CDR - Top 20 duration per calling number\",\"type\":\"pie\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":true,\"isDonut\":false,\"type\":\"pie\",\"legendPosition\":\"right\",\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"sum\",\"schema\":\"metric\",\"params\":{\"field\":\"duration\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"callingPartyNumber.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":{\"query_string\":{\"query\":\"*\",\"analyze_wildcard\":true,\"default_field\":\"*\"}},\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Reception-HQ-Calls-slash-min",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Reception SD - Calls/min",
+      "visState": "{\"aggs\":[{\"enabled\":true,\"id\":\"1\",\"params\":{},\"schema\":\"metric\",\"type\":\"count\"},{\"enabled\":true,\"id\":\"2\",\"params\":{\"customInterval\":\"1m\",\"extended_bounds\":{},\"field\":\"dateTimeConnect_formatted\",\"interval\":\"custom\",\"min_doc_count\":1},\"schema\":\"segment\",\"type\":\"date_histogram\"}],\"params\":{\"addLegend\":false,\"addTimeMarker\":false,\"addTooltip\":true,\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"labels\":{\"show\":true,\"truncate\":100},\"position\":\"bottom\",\"scale\":{\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{},\"type\":\"category\"}],\"defaultYExtents\":true,\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"legendPosition\":\"right\",\"mode\":\"stacked\",\"scale\":\"linear\",\"seriesParams\":[{\"data\":{\"id\":\"1\",\"label\":\"Count\"},\"mode\":\"stacked\",\"show\":\"true\",\"type\":\"histogram\",\"valueAxis\":\"ValueAxis-1\"}],\"setYExtents\":false,\"shareYAxis\":true,\"times\":[],\"type\":\"histogram\",\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"labels\":{\"filter\":false,\"rotate\":0,\"show\":true,\"truncate\":100},\"name\":\"LeftAxis-1\",\"position\":\"left\",\"scale\":{\"defaultYExtents\":true,\"mode\":\"normal\",\"setYExtents\":false,\"type\":\"linear\"},\"show\":true,\"style\":{},\"title\":{\"text\":\"Count\"},\"type\":\"value\"}],\"yAxis\":{}},\"title\":\"CUCM CDR - Reception SD - Calls/min\",\"type\":\"histogram\"}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"language\":\"lucene\",\"query\":\"originalCalledPartyNumber:8666\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Reception-HQ-INBOUND-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Reception SD- INBOUND Calls",
+      "visState": "{\"title\":\"CUCM CDR - Reception SD- INBOUND Calls\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":true,\"setYExtents\":false,\"yAxis\":{},\"spyPerPage\":10,\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":false,\"defaultYExtents\":true},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\"}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"IncomingICID.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"include\":\"\",\"size\":10,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"language\":\"lucene\",\"query\":\"originalCalledPartyNumber:8666\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Top-20-Call-per-Calling-Number",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Top 20 Call per Calling Number",
+      "visState": "{\"title\":\"CUCM CDR - Top 20 Call per Calling Number\",\"type\":\"histogram\",\"params\":{\"shareYAxis\":true,\"addTooltip\":true,\"addLegend\":false,\"scale\":\"linear\",\"mode\":\"stacked\",\"times\":[],\"addTimeMarker\":false,\"defaultYExtents\":false,\"setYExtents\":false,\"yAxis\":{},\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\",\"setYExtents\":false,\"defaultYExtents\":false},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\"}],\"legendPosition\":\"right\"},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"callingPartyNumber.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":20,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":\"\",\"language\":\"lucene\"},\"filter\":[]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "CUCM-CDR-Reception-HQ-Total-Calls",
+    "_type": "visualization",
+    "_source": {
+      "title": "CUCM CDR - Reception SD - Total Calls",
+      "visState": "{\"title\":\"CUCM CDR - Reception SD - Total Calls\",\"type\":\"metric\",\"params\":{\"fontSize\":60,\"addTooltip\":true,\"addLegend\":false,\"type\":\"metric\",\"metric\":{\"percentageMode\":false,\"useRanges\":false,\"colorSchema\":\"Green to Red\",\"metricColorMode\":\"None\",\"colorsRange\":[{\"from\":0,\"to\":10000}],\"labels\":{\"show\":true},\"invertColors\":false,\"style\":{\"bgFill\":\"#000\",\"bgColor\":false,\"labelColor\":false,\"subText\":\"\",\"fontSize\":60}}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"filter\":[],\"index\":\"a41d2030-6e63-11e8-b22b-4f4cbd9f2770\",\"query\":{\"query\":\"originalCalledPartyNumber:8666\",\"language\":\"lucene\"},\"highlight\":{\"pre_tags\":[\"@kibana-highlighted-field@\"],\"post_tags\":[\"@/kibana-highlighted-field@\"],\"fields\":{\"*\":{}},\"fragment_size\":2147483647}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "fad22360-6ee2-11e8-b22b-4f4cbd9f2770",
+    "_type": "visualization",
+    "_source": {
+      "title": "Bot - Nbr of bot evt by bot name",
+      "visState": "{\"title\":\"Bot - Nbr of bot evt by bot name\",\"type\":\"pie\",\"params\":{\"type\":\"pie\",\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"isDonut\":true,\"labels\":{\"show\":false,\"values\":true,\"last_level\":true,\"truncate\":100}},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"bot.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"7a11e190-6e63-11e8-b22b-4f4cbd9f2770\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "ec8b64f0-6ee3-11e8-b22b-4f4cbd9f2770",
+    "_type": "visualization",
+    "_source": {
+      "title": "Bot - exceptions of the bot",
+      "visState": "{\"title\":\"Bot - exceptions of the bot\",\"type\":\"heatmap\",\"params\":{\"type\":\"heatmap\",\"addTooltip\":true,\"addLegend\":true,\"enableHover\":false,\"legendPosition\":\"right\",\"times\":[],\"colorsNumber\":4,\"colorSchema\":\"Greens\",\"setColorRange\":false,\"colorsRange\":[],\"invertColors\":false,\"percentageMode\":false,\"valueAxes\":[{\"show\":false,\"id\":\"ValueAxis-1\",\"type\":\"value\",\"scale\":{\"type\":\"linear\",\"defaultYExtents\":false},\"labels\":{\"show\":false,\"rotate\":0,\"color\":\"#555\"}}]},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"segment\",\"params\":{\"field\":\"bot.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"message.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":5,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"defaultColors\":{\"0 - 500,000\":\"rgb(247,252,245)\",\"500,000 - 1,000,000\":\"rgb(199,233,192)\",\"1,000,000 - 1,500,000\":\"rgb(116,196,118)\",\"1,500,000 - 2,000,000\":\"rgb(35,139,69)\"}}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"7a11e190-6e63-11e8-b22b-4f4cbd9f2770\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "0e0d7810-6ee5-11e8-b22b-4f4cbd9f2770",
+    "_type": "visualization",
+    "_source": {
+      "title": "Bot - usage by day",
+      "visState": "{\"title\":\"Bot - usage by day\",\"type\":\"histogram\",\"params\":{\"type\":\"histogram\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"},\"valueAxis\":\"ValueAxis-1\"},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Unique count of bot.keyword\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"histogram\",\"mode\":\"stacked\",\"data\":{\"label\":\"Unique count of bot.keyword\",\"id\":\"1\"},\"valueAxis\":\"ValueAxis-1\",\"drawLinesBetweenPoints\":true,\"showCircles\":true}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"cardinality\",\"schema\":\"metric\",\"params\":{\"field\":\"bot.keyword\"}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"significant_terms\",\"schema\":\"group\",\"params\":{\"field\":\"bot.keyword\",\"size\":12}}]}",
+      "uiStateJSON": "{}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"7a11e190-6e63-11e8-b22b-4f4cbd9f2770\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "4f9f0610-6ee8-11e8-b22b-4f4cbd9f2770",
+    "_type": "visualization",
+    "_source": {
+      "title": "Bot - Msg by bot",
+      "visState": "{\"title\":\"Bot - Msg by bot\",\"type\":\"area\",\"params\":{\"type\":\"area\",\"grid\":{\"categoryLines\":false,\"style\":{\"color\":\"#eee\"}},\"categoryAxes\":[{\"id\":\"CategoryAxis-1\",\"type\":\"category\",\"position\":\"bottom\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\"},\"labels\":{\"show\":true,\"truncate\":100},\"title\":{}}],\"valueAxes\":[{\"id\":\"ValueAxis-1\",\"name\":\"LeftAxis-1\",\"type\":\"value\",\"position\":\"left\",\"show\":true,\"style\":{},\"scale\":{\"type\":\"linear\",\"mode\":\"normal\"},\"labels\":{\"show\":true,\"rotate\":0,\"filter\":false,\"truncate\":100},\"title\":{\"text\":\"Count\"}}],\"seriesParams\":[{\"show\":\"true\",\"type\":\"area\",\"mode\":\"stacked\",\"data\":{\"label\":\"Count\",\"id\":\"1\"},\"drawLinesBetweenPoints\":true,\"showCircles\":true,\"interpolate\":\"linear\",\"valueAxis\":\"ValueAxis-1\"}],\"addTooltip\":true,\"addLegend\":true,\"legendPosition\":\"right\",\"times\":[],\"addTimeMarker\":false},\"aggs\":[{\"id\":\"1\",\"enabled\":true,\"type\":\"count\",\"schema\":\"metric\",\"params\":{}},{\"id\":\"2\",\"enabled\":true,\"type\":\"date_histogram\",\"schema\":\"segment\",\"params\":{\"field\":\"@timestamp\",\"interval\":\"auto\",\"customInterval\":\"2h\",\"min_doc_count\":1,\"extended_bounds\":{}}},{\"id\":\"3\",\"enabled\":true,\"type\":\"terms\",\"schema\":\"group\",\"params\":{\"field\":\"from.keyword\",\"otherBucket\":false,\"otherBucketLabel\":\"Other\",\"missingBucket\":false,\"missingBucketLabel\":\"Missing\",\"size\":12,\"order\":\"desc\",\"orderBy\":\"1\"}}]}",
+      "uiStateJSON": "{\"vis\":{\"legendOpen\":false}}",
+      "description": "",
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"7a11e190-6e63-11e8-b22b-4f4cbd9f2770\",\"filter\":[],\"query\":{\"query\":\"\",\"language\":\"lucene\"}}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  }
+]

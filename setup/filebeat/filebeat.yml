@@ -1,0 +1,95 @@
+filebeat.inputs:
+    - type: log
+      paths:
+        - /var/log/messages
+        - /var/log/cron
+        - /var/log/secure
+        - /var/log/maillog
+        - /var/log/firewalld
+        - /var/log/docker
+        - /var/log/secure
+        - /var/log/*.log
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: syslog
+    - type: log
+      paths:
+        - /var/log/audit/audit.log
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: audit
+    - type: log
+      paths:
+        - /var/log/elasticsearch/*.log
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: elasticsearch
+    - type: log
+      paths:
+        - /var/log/logstash/logstash-plain.log
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: logstash
+
+    # CUCM CDR
+    - type: log
+      paths:
+        - /var/log/cucm_cdr/*/cdr*
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: cucm_cdr
+
+    # CUCM CMR
+    - type: log
+      paths:
+        - /var/log/cucm_cdr/*/cmr*
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: cucm_cmr
+
+    # CUCM logs
+    - type: log
+      paths:
+        - /var/log/servers/*/*sub*/*
+        - /var/log/servers/*/*pub*/*
+        - /var/log/servers/*/*moh*/*
+        - /var/log/servers/*/*tft*/*
+        - /var/log/servers/*/*cuc*/*
+        - /var/log/servers/*/*ucc*/*
+        - /var/log/servers/*/*cucm*/*
+        - /var/log/servers/*/*ccm*/*
+        - /var/log/servers/*/*imp*/*
+        - /var/log/servers/*/*agw*/*
+        - /var/log/servers/*/*dgw*/*
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: syslog_cucm
+
+    # VCS logs
+    - type: log
+      paths:
+        - /var/log/servers/*/*vci*/*
+        - /var/log/servers/*/*vcs*/*
+      fields_under_root: true
+      fields:
+            clientip: localhost
+            type: syslog_vcs
+
+#filebeat.config.modules:
+#  path: ${path.config}/modules.d/*.yml
+
+output.logstash:
+  hosts: ["localhost:5044"]
+  ssl.enabled: false
+
+#setup.kibana:
+#  host: "localhost:5601"
+logging.level: debug
+
