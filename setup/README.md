@@ -34,24 +34,15 @@ Repartition by Virtual Machine/Docker
 * _Install:_ kibana
 * _What:_ Provide web interface for analytics & ML reports
 
-
 Nodes design and sizing are not seeing here.
 Specific study must be done on your targeted environment to establish the nodes repartition and them sizing according to the role that they will have.
 Example if you need to provide high search performance it can be interesting to separate the node in charge of and increase its resources...
 
 ## Versions
-The following ELK version have been validated with these settings and updated according to the newest version but only the version *6.4* has been validated with SearchGuard v6 (for AUTH and TLS)
-To be sure that yu're compatible, use the good file ;-)
+This package is an old update coming from the 2.4 versions and today run on 6.4 cluster.
+Some previous configuration has been kept and it's generally when it's a major change.
 
-* 2.4
-* 5.4
-* 5.6
-* 6.0
-* 6.2
-* 6.3
-* 6.4
-
-## Installation
+## Installation (fast method)
 Target path is done for standard package deployment done via the Linux package management tool (as yum, apt...).
 So if your settings are not in '/etc/x' thanks to adapt to your environment...
 
@@ -64,22 +55,8 @@ So if your settings are not in '/etc/x' thanks to adapt to your environment...
 ### Logstash
 `\cp -fr logstash/* /etc/logstash/`
 
-#### Example on Logstash server
-```bash
-git clone https://github.com/guillain/ElasticSearch-toolbox
-cp ElasticSearch-toolbox/conf/logtash/* /etc/logstash/conf.d/
-systemctl restart logstash
-```
-
 ### Filebeat
 `cp filebeat/* /etc/filebeat/`
-
-#### Example on CentOS server to be collected with Filebeat
-```bash
-git clone https://github.com/guillain/ElasticSearch-toolbox
-cp ElasticSearch-toolbox/conf/filebeat/* /etc/filebeat/
-systemctl restart filebeat
-```
 
 ## Configuration
 Preconfigured files have been provided to be used as-it-is for a all-in-one server.
@@ -103,45 +80,52 @@ You have 2 templates and you must choose one of them depending of you want to us
 Lot of filters are ready and just you need to adapt your input (connectors) according to your systems.
 
 The configuration files have been recorded in a dedicated folder according to them usage:
-* [1-input](1-input)
-* [2-filter](2-filter)
-* [3-output](3-output)
+* [logstash/conf.d/1-input](logstash/conf.d/1-input)
+* [logstash/conf.d/2-filter](logstash/conf.d/2-filter)
+* [logstash/conf.d/3-output](logstash/conf.d/3-output)
 
 #### Input
-* [1-input/syslog.conf](1-input/syslog.conf) : UDP/5000
-* [1-input/beats.conf](1-input/beats.conf) : TCP/5044
-* [1-input/bot.conf](1-input/bot.conf) : TCP/5055
+* [logstash/conf.d/1-input/syslog.conf](logstash/conf.d/1-input/syslog.conf) : UDP/5000
+* [logstash/conf.d/1-input/beats.conf](logstash/conf.d/1-input/beats.conf) : TCP/5044
+* [logstash/conf.d/1-input/bot.conf](logstash/conf.d/1-input/bot.conf) : TCP/5055
 
 #### Filter
 Most of them with based on the patterns included in the logstash-patterns-core distribution.
 Remember to adapt the clientip if you want to use the map, (geo)location...
-* [2-filter/syslog.conf](2-filter/syslog.conf)
-* [2-filter/beats.conf](2-filter/beats.conf)
-* [2-filter/syslog.conf](2-filter/syslog.conf)
-* [2-filter/apache.conf](2-filter/apache.conf)
-* [2-filter/audit.conf](2-filter/audit.conf)
-* [2-filter/login.conf](2-filter/login.conf)
-* [2-filter/bot.conf](2-filter/bot.conf)
-* [2-filter/redis.conf](2-filter/redis.conf)
-* [2-filter/aws.conf](2-filter/aws.conf)
-* [2-filter/cisco.conf](2-filter/cisco.conf)
-* [2-filter/mongodb.conf](2-filter/mongodb.conf)
-* [2-filter/nagios.conf](2-filter/nagios.conf)
-* [2-filter/java.conf](2-filter/java.conf)
-* [2-filter/haproxy.conf](2-filter/haproxy.conf)
-* [2-filter/ruby.conf](2-filter/ruby.conf)
-* [2-filter/netscreen.conf](2-filter/netscreen.conf)
-* [2-filter/sharewall.conf](2-filter/sharewall.conf)
-* [2-filter/postgresql.conf](2-filter/postgresql.conf)
-* [2-filter/rails.conf](2-filter/rails.conf)
-* [2-filter/bro.conf](2-filter/bro.conf)
-* [2-filter/cucmcdr.conf](2-filter/cucmcdr.conf)
+* [logstash/conf.d/2-filter/syslog.conf](logstash/conf.d/2-filter/syslog.conf)
+* [logstash/conf.d/2-filter/beats.conf](logstash/conf.d/2-filter/beats.conf)
+* [logstash/conf.d/2-filter/syslog.conf](logstash/conf.d/2-filter/syslog.conf)
+* [logstash/conf.d/2-filter/apache.conf](logstash/conf.d/2-filter/apache.conf)
+* [logstash/conf.d/2-filter/audit.conf](logstash/conf.d/2-filter/audit.conf)
+* [logstash/conf.d/2-filter/login.conf](logstash/conf.d/2-filter/login.conf)
+* [logstash/conf.d/2-filter/bot.conf](logstash/conf.d/2-filter/bot.conf)
+* [logstash/conf.d/2-filter/redis.conf](logstash/conf.d/2-filter/redis.conf)
+* [logstash/conf.d/2-filter/aws.conf](logstash/conf.d/2-filter/aws.conf)
+* [logstash/conf.d/2-filter/cisco.conf](logstash/conf.d/2-filter/cisco.conf)
+* [logstash/conf.d/2-filter/mongodb.conf](logstash/conf.d/2-filter/mongodb.conf)
+* [logstash/conf.d/2-filter/nagios.conf](logstash/conf.d/2-filter/nagios.conf)
+* [logstash/conf.d/2-filter/java.conf](logstash/conf.d/2-filter/java.conf)
+* [logstash/conf.d/2-filter/haproxy.conf](logstash/conf.d/2-filter/haproxy.conf)
+* [logstash/conf.d/2-filter/ruby.conf](logstash/conf.d/2-filter/ruby.conf)
+* [logstash/conf.d/2-filter/netscreen.conf](logstash/conf.d/2-filter/netscreen.conf)
+* [logstash/conf.d/2-filter/sharewall.conf](logstash/conf.d/2-filter/sharewall.conf)
+* [logstash/conf.d/2-filter/postgresql.conf](logstash/conf.d/2-filter/postgresql.conf)
+* [logstash/conf.d/2-filter/rails.conf](logstash/conf.d/2-filter/rails.conf)
+* [logstash/conf.d/2-filter/bro.conf](logstash/conf.d/2-filter/bro.conf)
+* [logstash/conf.d/2-filter/cucmcdr.conf](logstash/conf.d/2-filter/cucmcdr.conf)
 
 #### Output
 Elasticsearch only at this time... to be continued.
 Remember to adapt the `elasticsearch.conf` output file according to your ES.
-* [3-output/elasticsearch.conf](3-output/elasticsearch.conf)
-* [3-output/debug.conf](3-output/debug.conf)
+* [logstash/conf.d/3-output/elasticsearch.conf](logstash/conf.d/3-output/elasticsearch.conf)
+* [logstash/conf.d/3-output/debug.conf](logstash/conf.d/3-output/debug.conf)
+
+#### Installation example on Logstash server
+```bash
+git clone https://github.com/guillain/ElasticSearch-toolbox
+\cp -fr ElasticSearch-toolbox/conf/logtash/* /etc/logstash/conf.d/
+systemctl restart logstash
+```
 
 ### FileBeat
 Provide log template to quickly integrate on your host where the data should come.
@@ -155,6 +139,13 @@ Provide log template to quickly integrate on your host where the data should com
 * cucm-cdr
 * cucm-cmr
 * bot: based on JSON and dynamic index
+
+#### Installation example on CentOS server to be collected with Filebeat
+```bash
+git clone https://github.com/guillain/ElasticSearch-toolbox
+cp ElasticSearch-toolbox/conf/filebeat/* /etc/filebeat/
+systemctl restart filebeat
+```
 
 ## Cisco CDR/CMR
 I've not integrated the mecanism to get the CDR/CMR from the CUCM, up to you to add your choice.

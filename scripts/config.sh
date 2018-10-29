@@ -16,6 +16,7 @@ REMOTE_PASS=''
 REMOTE_URL='http://54.37.9.161:9200'
 
 NBR_OF_REPLICAT=0
+RETENTION_DAY=30
 
 # Bot
 FILTER="@timestamp @version from host level message spaceid spacename type"

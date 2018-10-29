@@ -1,8 +1,9 @@
-# ElasticSearch-toolbox
+# ElasticStack-toolbox
 Provide a set of configuration and tools to jump quickly in Elastic stack.
 
 ## Scripts
 Some useful tools to manage ES.
+
 [scripts/README.md](scripts/README.md)
 
 ## Setup
