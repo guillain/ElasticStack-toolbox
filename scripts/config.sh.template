@@ -1,0 +1,25 @@
+#!/bin/bash
+
+INDEX_SOURCE=
+URL_SOURCE=
+URL_DEST=
+
+LOCAL_USER=''
+LOCAL_PASS=''
+LOCAL_URL=''
+LOCAL_INDEX=''
+PREFIX='temp'
+
+REMOTE_INDEX=''
+REMOTE_USER=''
+REMOTE_PASS=''
+REMOTE_URL=''
+
+NBR_OF_REPLICAT=0
+RETENTION_DAY=30
+
+# Bot
+FILTER="@timestamp @version from host level message spaceid spacename type"
+
+# Shellbot
+#FILTER="@timestamp @version bot channel_id clientip content from_id from_label host id input_type is_direct mentioneds_ids message personEmail personId roomId roomType source stamp text type"
