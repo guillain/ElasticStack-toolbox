@@ -1,0 +1,49 @@
+version: '2.2'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: elasticsearch
+    container_name: elasticsearch
+    volumes:
+      - ./elasticsearch/single-node/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - esdata1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.2
+    hostname: logstash
+    container_name: logstash
+    volumes:
+      - ./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline.yml:/usr/share/logstash/config/pipeline.yml
+      - ./logstash/conf.d/:/usr/share/logstash/config/conf.d/
+    environment:
+      CONFIG: input { log4j { tags => "log4j" } tcp { port => 9290 tags => "tcpin" codec => "json" } } output { elasticsearch { host => elasticsearch } }
+    ports:
+     - "9290:9290" #tcpin port
+     - "4560:4560" #log4j port
+    links:
+      - elasticsearch:elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.2
+    hostname: kibana
+    container_name: kibana
+    volumes:
+      - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - elasticsearch:elasticsearch
+    ports:
+      - "5601:5601" #kibana port
+
+volumes:
+  esdata1:
+    driver: local
+  esdata2:
+    driver: local
+
+networks:
+  esnet:

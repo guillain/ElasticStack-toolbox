@@ -1,0 +1,154 @@
+version: '2.2'
+services:
+  es-master-1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-master-1
+    container_name: es-master-1
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_master_1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-master-2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-master-2
+    container_name: es-master-2
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_master_2.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-master-3:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-master-3
+    container_name: es-master-3
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_master_3.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+      
+
+  es-hot-1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-hot-1
+    container_name: es-hot-1
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_hot_1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-hot-1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-hot-2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-hot-2
+    container_name: es-hot-2
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_hot_2.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-hot-2:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-hot-3:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-hot-3
+    container_name: es-hot-3
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_hot_3.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-hot-3:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+
+  es-warm-1:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-warm-1
+    container_name: es-warm-1
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_warm_1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-warm-1:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-warm-2:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-warm-2
+    container_name: es-warm-2
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_warm_2.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-warm-2:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+  es-warm-3:
+    image: docker.elastic.co/elasticsearch/elasticsearch:6.4.2
+    hostname: es-warm-3
+    container_name: es-warm-3
+    volumes:
+      - ./elasticsearch/hot_warm/elasticsearch_warm_3.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+      - es-warm-3:/usr/share/elasticsearch/data
+    ports:
+      - 9200:9200
+    networks:
+      - esnet
+      
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:6.4.2
+    hostname: logstash
+    container_name: logstash
+    volumes:
+      - ./logstash/logstash.yml:/usr/share/logstash/config/logstash.yml
+      - ./logstash/pipeline.yml:/usr/share/logstash/config/pipeline.yml
+      - ./logstash/conf.d/:/usr/share/logstash/config/conf.d/
+    ports:
+     - "9290:9290" #tcpin port
+     - "4560:4560" #log4j port
+    links:
+      - elasticsearch:elasticsearch
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:6.4.2
+    hostname: kibana
+    container_name: kibana
+    volumes:
+      - ./kibana/kibana.yml:/usr/share/kibana/config/kibana.yml
+    links:
+      - elasticsearch:elasticsearch
+    ports:
+      - "5601:5601" #kibana port
+
+  ml:
+    image: docker.elastic.co/ml/ml:6.4.2
+    hostname: ml
+    container_name: ml
+    volumes:
+      - ./elasticsearch/elastic_ml_1.yml:/usr/share/elasticsearch/config/elasticsearch.yml
+    links:
+      - elasticsearch:elasticsearch
+    ports:
+      - "5601:5601" #ml port
+      
+volumes:
+  es-hot-1:
+    driver: local
+  es-hot-2:
+    driver: local
+  es-hot-3:
+    driver: local
+  es-warm-1:
+    driver: local
+  es-warm-2:
+    driver: local
+  es-warm-3:
+    driver: local
+networks:
+  esnet:

@@ -1,0 +1,36 @@
+# ======================== Elasticsearch Configuration =========================
+# https://www.elastic.co/guide/en/elasticsearch/reference/index.html
+# https://www.elastic.co/blog/hot_warm_architecture
+# ---------------------------------- Cluster -----------------------------------
+cluster.name: ES-HOT-WARM
+# ------------------------------------ Node ------------------------------------
+node.name: warm_2
+node.master: false
+node.data: true
+node.attr.box_type: warm
+node.attr.rack: esx_2
+# ----------------------------------- Paths ------------------------------------
+path.data: /home/data/elasticsearch
+path.logs: /home/data/log
+# ----------------------------------- Memory -----------------------------------
+#bootstrap.memory_lock: true
+# ---------------------------------- Network -----------------------------------
+network.host: ADDRIP_WARM_2
+http.port: 9200
+# --------------------------------- Discovery ----------------------------------
+discovery.zen.ping.unicast.hosts: ["ADDRIP_MASTER_1","ADDRIP_KIBANA","ADDRIP_ML_1","ADDRIP_HOT_1","ADDRIP_HOT_2","ADDRIP_HOT_3","ADDRIP_WARM_1","ADDRIP_WARM_2","ADDRIP_WARM_3"]
+#discovery.zen.minimum_master_nodes:
+# ---------------------------------- Gateway -----------------------------------
+#gateway.recover_after_nodes: 3
+# ---------------------------------- Various -----------------------------------
+#action.destructive_requires_name: true
+# ----------------------------------- Thread -----------------------------------
+thread_pool.bulk.queue_size: 3000
+thread_pool.index.queue_size: 3000
+thread_pool.search.queue_size : 5000
+# ----------------------------------- xpack ------------------------------------
+xpack.security.enabled: false
+xpack.ml.enabled: false
+xpack.security.audit.enabled: false
+xpack.monitoring.enabled: true
+xpack.monitoring.collection.enabled: true
