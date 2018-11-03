@@ -11,11 +11,7 @@ Deployment and configuration support provided by scripts and templatce of config
   * Management tools for the stack (reindex, duplicate, mapping...)
 
 ## Elastic stack setup
-Two deployment scenarios and each one is provided with VM and docker methods:
-
-1 - VM
-2 - Docker
-
+Two deployment scenarios and each one is provided with VM and docker methods.
 Set up the OS and install and configure the main components of the Elastic stack.
 Each of them is provided with a bash script and set of configuration files ready to use or at least to adapt for a specific production environment.
 * [Elasticsearch](elasticsearch)
