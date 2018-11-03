@@ -6,8 +6,8 @@ URL_DEST=54.93.180.49
 
 LOCAL_USER='devops'
 LOCAL_PASS='MyDev0ps!'
-LOCAL_URL='https://7a764179163543f5825d75761d7017a6.eu-central-1.aws.cloud.es.io:9243'
-LOCAL_INDEX='bonsai'
+URL_SOURCE='https://7a764179163543f5825d75761d7017a6.eu-central-1.aws.cloud.es.io:9243'
+URL_SOURCE='bonsai'
 PREFIX='temp'
 
 REMOTE_INDEX='temp'

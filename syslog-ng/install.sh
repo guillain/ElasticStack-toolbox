@@ -20,23 +20,9 @@ yum -y install syslog-ng
 mkdir /home/data/servers
 
 ## CDR/CMR folder define by source 
-mkdir /home/data/cdr_cmr/cucm/EMEA_1
-mkdir /home/data/cdr_cmr/cucm/EMEA_2
-mkdir /home/data/cdr_cmr/cucm/SME
-mkdir /home/data/cdr_cmr/cucm/AMER
-mkdir /home/data/cdr_cmr/cucm/APAC
-
-mkdir /home/data/cdr_cmr/vcs/EMEA_B2B_1
-mkdir /home/data/cdr_cmr/vcs/EMEA_B2B_2
-mkdir /home/data/cdr_cmr/vcs/AMER_B2B
-mkdir /home/data/cdr_cmr/vcs/APAC_B2B
-mkdir /home/data/cdr_cmr/vcs/EMEA_TEL
-mkdir /home/data/cdr_cmr/vcs/EMEA_FED
-mkdir /home/data/cdr_cmr/vcs/AMER_TEL
-mkdir /home/data/cdr_cmr/vcs/APAC_TEL
-
-mkdir /home/data/cdr_cmr/cms/WWW
-mkdir /home/data/cdr_cmr/cms/FED
+mkdir /home/data/cdr_cmr/cucm/
+mkdir /home/data/cdr_cmr/vcs/
+mkdir /home/data/cdr_cmr/cms/
 
 # Initialisation the app with pre-configured files
 mv /etc/syslog-ng.conf /etc/syslog-ng.conf.orig

@@ -51,8 +51,7 @@ filebeat.inputs:
     ## - logs
     - type: log
       paths:
-        - /home/data/servers/*/ths*uccucm*/
-        - /home/data/servers/*/ths*uccsme*/
+        - /home/data/servers/*/*cucm*/
       fields_under_root: true
       fields:
             clientip: localhost
@@ -62,9 +61,7 @@ filebeat.inputs:
     ## - log 
     - type: log
       paths:
-        - /home/data/servers/*/ths*uccb2b*/
-        - /home/data/servers/*/ths*ucctel*/
-        - /home/data/servers/*/ths*uccfed*/
+        - /home/data/servers/*/*vcs*/
       fields_under_root: true
       fields:
             clientip: localhost
@@ -81,12 +78,12 @@ filebeat.inputs:
     ## - log
     - type: log
       paths:
-        - /home/data/servers/*/ths*ucccms*/
+        - /home/data/servers/*/*cms*/
       fields_under_root: true
       fields:
             clientip: localhost
             type: syslog_cms
-    ## - CDR/CMR 
+    ## - CDR/CMR
     - type: log
       paths:
         - /home/data/cdr_cmr/cms/

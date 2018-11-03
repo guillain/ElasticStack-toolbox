@@ -1,21 +1,22 @@
 #!/bin/bash
 
-LOCAL_USER='devops'
-LOCAL_PASS='MyDev0ps!'
-LOCAL_URL='https://7a764179163543f5825d75761d7017a6.eu-central-1.aws.cloud.es.io:9243'
-LOCAL_INDEX='bonsai'
 PREFIX='temp'
 
-REMOTE_INDEX='temp'
-REMOTE_USER=''
-REMOTE_PASS=''
-REMOTE_URL='http://54.37.9.161:9200'
+if [ "${1}" != "" ]; then INDEX_SOURCE="${1}"; fi
+if [ "${2}" != "" ]; then URL_SOURCE="${2}"; fi
+if [ "${3}" != "" ]; then LOCAL_USER="${3}"; fi
+if [ "${4}" != "" ]; then LOCAL_PASS="${4}"; fi
+
+if [ "${5}" != "" ]; then REMOTE_INDEX="${5}"; fi
+if [ "${6}" != "" ]; then REMOTE_URL="${6}"; fi
+if [ "${7}" != "" ]; then REMOTE_USER="${7}"; fi
+if [ "${8}" != "" ]; then REMOTE_PASS="${8}"; fi
 
 request() {
   if [ "${1}" == "local" ]; then
     user=${LOCAL_USER}
     pass=${LOCAL_PASS}
-    url=${LOCAL_URL}
+    url=${URL_SOURCE}
   elif [ "${1}" == "remote" ]; then
     user=${REMOTE_USER}
     pass=${REMOTE_PASS}
@@ -30,7 +31,7 @@ request() {
 }
 
 # Get list of index
-index_lst=`request "local" "GET" "/_cat/indices/${LOCAL_INDEX}-*" | awk '{print $3}'`
+index_lst=`request "local" "GET" "/_cat/indices/${URL_SOURCE}-*" | awk '{print $3}'`
 
 # For each index duplicate it in the new index 
 # PS. hopefuly you already have an ES template to reformat your field...
@@ -55,7 +56,7 @@ echo "SURE...?!?!"
 read
 
 # Remove original index
-request "local" "DELETE" "${LOCAL_INDEX}-*" ""
+request "local" "DELETE" "${URL_SOURCE}-*" ""
 
 # Recreate original index from the duplicated
 for index in ${index_lst}; do

@@ -1,23 +1,24 @@
 #!/bin/bash
 
 # Add the following to the remote Elasticsearch node
-# reindex.remote.whitelist: ['LOCAL_URL']
+# reindex.remote.whitelist: ['URL_SOURCE']
 
-LOCAL_USER='devops'
-LOCAL_PASS='MyDev0ps!'
-LOCAL_URL='https://7a764179163543f5825d75761d7017a6.eu-central-1.aws.cloud.es.io:9243'
-LOCAL_INDEX=''
+if [ "${1}" != "" ]; then INDEX_SOURCE="${1}"; fi
+if [ "${2}" != "" ]; then URL_SOURCE="${2}"; fi
+if [ "${3}" != "" ]; then LOCAL_USER="${3}"; fi
+if [ "${4}" != "" ]; then LOCAL_PASS="${4}"; fi
 
-REMOTE_INDEX='iot'
-REMOTE_USER=''
-REMOTE_PASS=''
-REMOTE_URL='http://54.37.9.161:9200'
+if [ "${5}" != "" ]; then REMOTE_INDEX="${5}"; fi
+if [ "${6}" != "" ]; then REMOTE_URL="${6}"; fi
+if [ "${7}" != "" ]; then REMOTE_USER="${7}"; fi
+if [ "${8}" != "" ]; then REMOTE_PASS="${8}"; fi
+
 
 request() {
   if [ "${1}" == "local" ]; then
     user=${LOCAL_USER}
     pass=${LOCAL_PASS}
-    url="${LOCAL_URL}/${3}"
+    url="${URL_SOURCE}/${3}"
   elif [ "${1}" == "remote" ]; then
     user=${REMOTE_USER}
     pass=${REMOTE_PASS}
@@ -53,7 +54,7 @@ for index in ${index_lst}; do
     }
   },
   \"dest\": {
-    \"index\": \"${LOCAL_INDEX}${index}\"
+    \"index\": \"${INDEX_SOURCE}${index}\"
   }
 }"
   request "local" "POST" "/_reindex" "${conf}"
