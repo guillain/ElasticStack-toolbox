@@ -49,6 +49,7 @@ How to generate all CSR and the associated key in one shot? foolow this script ;
 * Provide additional elasticsearch *template*
 * Finalize the Cisco TMS/CMS CDR/CMR integration
 * Provide the bash scripts to manage the files vs archives in syslog-ng (backup.sh/clean.sh)
+* Add _curator_ to the docker env
 
 ## Thanks
 Thanks in advance to comment, improve, fork, PR... :-D
