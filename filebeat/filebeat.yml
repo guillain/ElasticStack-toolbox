@@ -104,3 +104,7 @@ setup.kibana:
 
 logging.level: info
 
+xpack.monitoring:
+  enabled: true
+  elasticsearch:
+    hosts: ['http://ADDR_IP_MASTER_1:9200']
