@@ -92,8 +92,8 @@ filebeat.inputs:
             clientip: localhost
             type: cms_cdr_cmr
 
-#filebeat.config.modules:
-#  path: ${path.config}/modules.d/*.yml
+filebeat.config.modules:
+  path: ${path.config}/modules.d/*.yml
 
 output.logstash:
   hosts: ["ADDRIP_LOGSTASH:5044"]
