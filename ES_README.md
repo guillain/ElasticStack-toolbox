@@ -28,6 +28,10 @@ Each of them is provided with a bash script and set of configuration files ready
 * [Filebeat](filebeat)
 * [Kibana](kibana)
 
+## Versions
+This package is an old update coming from the 2.4 versions and up-to-date to run on 6.5.0 cluster.
+Some previous configuration has been kept and it's generally when a major change have been done (impacting the applications).
+
 ## Security
 To ensure the security without the x-pack extra licence, SearchGuard is used and specific note file can be found on the following liink:
 * https://github.com/guillain/notes/blob/master/ELK_SearchGuard.txt
@@ -77,11 +81,7 @@ For that two examples are provided:
   - 3 * hot data nodes (32GB,8CPU,500GB)
   - 3 * warm data nodes (32GB,8CPU,2TB)
   - 1 * machine learning node (8GB,2CPU,32GB)
-
-## Versions
-This package is an old update coming from the 2.4 versions and up-to-date to run on 6.4.2 cluster.
-Some previous configuration has been kept and it's generally when a major change have been done (impacting the applications).
-
+  
 ## Installation (fast method for instance)
 The installation scripts have been written based on CentOS-7 64, compatible with current AWS AMI.
 `yum` has been used to install the package via the Elastic RPM repository.
