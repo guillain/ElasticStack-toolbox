@@ -10,101 +10,132 @@ filebeat.inputs:
         - /var/log/secure
         - /var/log/*.log
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: syslog
     - type: log
       paths:
-        - /var/log/audit/audit.log
+        - /var/log/audit/audit.log*
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: audit
     - type: log
       paths:
         - /var/log/elasticsearch/*.log
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: elasticsearch
     - type: log
       paths:
         - /var/log/logstash/logstash-plain.log
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: logstash
 
-    # CUCM 
-    ## - CDR
+    # CUCM CDR
     - type: log
       paths:
         - /home/data/cdr_cmr/cucm/*/cdr*
+      fields_under_root: true
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: cucm_cdr
 
-    ## - CMR
+    # CUCM CMR
     - type: log
       paths:
         - /home/data/cdr_cmr/cucm/*/cmr*
+      fields_under_root: true
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: cucm_cmr
 
-    ## - logs
+    # CUCM logs
     - type: log
       paths:
-        - /home/data/servers/*/*cucm*/
+        - /home/data/servers/*/cucm/local*.log
       fields_under_root: true
       fields:
-            clientip: localhost
-            type: syslog_cucm
+            clientip: 45.9.100.171
+            type: syslog_cucm_local
+    - type: log
+      paths:
+        - /home/data/servers/*/cucm/user.log
+      fields_under_root: true
+      fields:
+            clientip: 45.9.100.171
+            type: syslog_cucm_user
+    - type: log
+      paths:
+        - /home/data/servers/*/cucm/cron.log
+      fields_under_root: true
+      fields:
+            clientip: 45.9.100.171
+            type: syslog_cucm_cron
+    - type: log
+      paths:
+        - /home/data/servers/*/cucm/authpriv.log
+      fields_under_root: true
+      fields:
+            clientip: 45.9.100.171
+            type: syslog_cucm_authpriv
+    - type: log
+      paths:
+        - /home/data/servers/*/cucm/daemon.log
+      fields_under_root: true
+      fields:
+            clientip: 45.9.100.171
+            type: syslog_cucm_daemon
+    - type: log
+      paths:
+        - /home/data/servers/*/cucm/kern.log
+      fields_under_root: true
+      fields:
+            clientip: 45.9.100.171
+            type: syslog_cucm_kernel
 
-    # VCS
-    ## - log 
+    # VCS logs
     - type: log
       paths:
-        - /home/data/servers/*/*vcs*/
+        - /home/data/servers/*/vcs/syslog.log
       fields_under_root: true
       fields:
-            clientip: localhost
+            clientip: 45.9.100.171
             type: syslog_vcs
-    ## - CDR/CMR
     - type: log
       paths:
-        - /home/data/cdr_cmr/vcs/
+        - /home/data/servers/*/vcs/local*.log
       fields_under_root: true
       fields:
-            clientip: localhost
-            type: vcs_cdr_cmr
-    # CMS
-    ## - log
+            clientip: 45.9.100.171
+            type: syslog_vcs_local
     - type: log
       paths:
-        - /home/data/servers/*/*cms*/
+        - /home/data/servers/*/vcs/security.log
       fields_under_root: true
       fields:
-            clientip: localhost
-            type: syslog_cms
-    ## - CDR/CMR
+            clientip: 45.9.100.171
+            type: syslog_vcs_security
     - type: log
       paths:
-        - /home/data/cdr_cmr/cms/
+        - /home/data/servers/*/vcs/user.log
       fields_under_root: true
       fields:
-            clientip: localhost
-            type: cms_cdr_cmr
+            clientip: 45.9.100.171
+            type: syslog_vcs_user
 
 filebeat.config.modules:
   path: ${path.config}/modules.d/*.yml
 
 output.logstash:
-  hosts: ["ADDRIP_LOGSTASH:5044"]
+  hosts: ["localhost:5044"]
   ssl.enabled: false
 
-setup.kibana:
-  host: "ADDRIP_KIBANA:5601"
-
-logging.level: info
+#setup.kibana:
+#  host: "localhost:5601"
+logging.level: debug
 
 xpack.monitoring:
   enabled: true
   elasticsearch:
-    hosts: ['http://ADDR_IP_MASTER_1:9200']
+    hosts: ['http://localhost:9200']
+
