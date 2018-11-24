@@ -10,25 +10,25 @@ filebeat.inputs:
         - /var/log/secure
         - /var/log/*.log
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog
     - type: log
       paths:
         - /var/log/audit/audit.log*
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: audit
     - type: log
       paths:
         - /var/log/elasticsearch/*.log
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: elasticsearch
     - type: log
       paths:
         - /var/log/logstash/logstash-plain.log
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: logstash
 
     # CUCM CDR
@@ -37,7 +37,7 @@ filebeat.inputs:
         - /home/data/cdr_cmr/cucm/*/cdr*
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: cucm_cdr
 
     # CUCM CMR
@@ -46,7 +46,7 @@ filebeat.inputs:
         - /home/data/cdr_cmr/cucm/*/cmr*
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: cucm_cmr
 
     # CUCM logs
@@ -55,42 +55,42 @@ filebeat.inputs:
         - /home/data/servers/*/cucm/local*.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_local
     - type: log
       paths:
         - /home/data/servers/*/cucm/user.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_user
     - type: log
       paths:
         - /home/data/servers/*/cucm/cron.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_cron
     - type: log
       paths:
         - /home/data/servers/*/cucm/authpriv.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_authpriv
     - type: log
       paths:
         - /home/data/servers/*/cucm/daemon.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_daemon
     - type: log
       paths:
         - /home/data/servers/*/cucm/kern.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_cucm_kernel
 
     # VCS logs
@@ -99,28 +99,28 @@ filebeat.inputs:
         - /home/data/servers/*/vcs/syslog.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_vcs
     - type: log
       paths:
         - /home/data/servers/*/vcs/local*.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_vcs_local
     - type: log
       paths:
         - /home/data/servers/*/vcs/security.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_vcs_security
     - type: log
       paths:
         - /home/data/servers/*/vcs/user.log
       fields_under_root: true
       fields:
-            clientip: 45.9.100.171
+            clientip: PUBLIC_IP_ADDR
             type: syslog_vcs_user
 
 filebeat.config.modules:
