@@ -19,7 +19,8 @@ request() {
   fi
 
   if [ "${4}" != "" ]; then
-     echo "$4"
+    echo "$4"
+
     curl -X ${2} -u${user}:${pass} ${url}/${3} -H "Content-Type: application/json" -d "${4}"
   else
     curl -X ${2} -u${user}:${pass} ${url}/${3} -H "Content-Type: application/json"
@@ -38,6 +39,10 @@ for index in ${index_lst}; do
   },
   \"dest\": {
     \"index\": \"${PREFIX}-${index}\"
+  },
+  \"script\": {
+    \"inline\": \"ctx._source.remove(\\\"dtype\\\"); ctx._source.remove(\\\"device\\\"); ctx._source.remove(\\\"data\\\");\",
+    \"lang\": \"painless\"
   }
 }"
   request "local" "POST" "_reindex" "${conf}"
